@@ -1,26 +1,43 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep  1 21:41:34 2020
 
-@author: -
-"""
-
+from flask import Flask, render_template, request
+from werkzeug.utils import secure_filename
 import tensorflow as tf
-import pathlib
 import numpy as np
-data_dir = pathlib.Path("D:/Personal/Vtop/Semester 5/Artificial Intellegance/J Comp/raw-img")
-model = tf.keras.models.load_model("./Test1")
-class_names = ['Butterfly','Cat','Chicken','Cow','Dog','Elephant','Horse','Sheep','Spider','Squirrel']
-image = tf.keras.preprocessing.image.load_img(
-    "./1.jpg", 
-    grayscale=False, color_mode='rgb', target_size=(100, 100),
-    interpolation='nearest'
-)
-img = tf.keras.preprocessing.image.img_to_array(image)
-img = tf.expand_dims(img, 0)
-prediction_out = model.predict(img)
-score = tf.nn.softmax(prediction_out[0])
-print(
-    "This image most likely belongs to {} with a {:.2f} percent confidence."
-    .format(class_names[np.argmax(score)], 100 * np.max(score))
-)
+import os
+
+app = Flask(__name__, template_folder='templates')
+UPLOAD_FOLDER = 'D:/Personal/Codes/Python/JComp/'
+
+@app.route('/', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'GET':
+        return render_template('Main.html')
+    if request.method == 'POST':
+        f = request.files['file']
+        filename = secure_filename(f.filename)
+        ext = filename.rsplit('.', 1)[1]
+        f.save(os.path.join(UPLOAD_FOLDER, filename))
+        try:
+            os.rename(UPLOAD_FOLDER + filename, UPLOAD_FOLDER+'1.' + ext)
+        except:
+            os.remove(UPLOAD_FOLDER + '1.' + ext)
+            os.rename(UPLOAD_FOLDER + filename, UPLOAD_FOLDER+'1.' + ext)
+        model = tf.keras.models.load_model("./Test1")
+        class_names = ['Butterfly','Cat','Chicken','Cow','Dog','Elephant','Horse','Sheep','Spider','Squirrel']
+        image = tf.keras.preprocessing.image.load_img("./1." + ext, 
+                                                      grayscale=False, 
+                                                      color_mode='rgb', 
+                                                      target_size=(100, 100),
+                                                      interpolation='nearest'
+                                                      )
+        img = tf.keras.preprocessing.image.img_to_array(image)
+        img = tf.expand_dims(img, 0)
+        prediction_out = model.predict(img)
+        score = tf.nn.softmax(prediction_out[0])
+        animal = class_names[np.argmax(score)]
+        chance = 100 * np.max(score)
+        os.remove(UPLOAD_FOLDER + '1.' + ext)
+        return render_template('Main.html', result = animal, chance=chance)
+		
+if __name__ == '__main__':
+   app.run()
