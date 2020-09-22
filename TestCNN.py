@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 import tensorflow as tf
@@ -38,6 +37,16 @@ def upload_file():
         chance = 100 * np.max(score)
         os.remove(UPLOAD_FOLDER + '1.' + ext)
         return render_template('Main.html', result = animal, chance=chance)
-		
+    
+@app.route('/contrib', methods = ['GET'])
+def show_contrib():
+    if request.method == 'GET':
+        return render_template('Contrib.html')
+
+@app.route('/model', methods=['GET'])
+def show_model():
+    if request.method == 'GET':
+        return render_template('Model.html')
+
 if __name__ == '__main__':
    app.run()
