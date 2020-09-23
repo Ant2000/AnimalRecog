@@ -35,12 +35,13 @@
 
  
     
-         animation-name: animate;
+         
+        
+          animation-name: animate;
           animation-duration: 24s;
           animation-timing-function: ease-in-out;
           animation-iteration-count: infinite;
-          background-size: cover;      
-                
+          background-size: cover;       
         
         
          }
@@ -98,6 +99,9 @@
   border-radius: 17px;
 
       }
+      
+
+      
       #ee
       {
         margin-right: 15px;
@@ -166,24 +170,26 @@
     
     <body>
         <div class="s">
-            <span id="t">Anima AI</span>
+            <span id="t">Anima Artificial Intelligence</span>
             <span id="g"><a href="#">Home</a></span>
             <img class="img" src="https://us.123rf.com/450wm/vectorplus/vectorplus1610/vectorplus161000307/64675593-home-vector-icon-white-illustration-isolated-on-black-background-for-graphic-and-web-design-.jpg?ver=6" width="30px" height="30px">
             <span id="e"><div class="dropdown">
-              <button class="dropbtn">About</button>
+              <button class="dropbtn">Creators</button>
               <div class="dropdown-content">
-                <a href="/model">The Project:</a>
-                <a href="/contrib">The Team</a>
+                <a href="#">AI Project:</a>
+                <a href="#">Antony Jose</a>
+                <a href="#">Saurabh Swaraj</a>
               </div>
             </div></span>
-            <span id="ee"><a href="#">Project</a></span>
+            <span id="ee"><a href="#">Model</a></span>
+            
             
 
 
 
         </div><br><br>
         <div class="xx"><b>File Upload</b></div><br>
-        <form id="r" action = "#" method = "POST" enctype = "multipart/form-data">
+        <form id="r" action = "http://localhost:5000/" method = "POST" enctype = "multipart/form-data">
         <p><input type = "file" name = "file"></p>
         <p><input type="submit" value="Submit"></p>
         </form>
