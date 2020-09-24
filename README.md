@@ -1,5 +1,5 @@
 The objective of this project is to identify different animals using AI.
-The dataset used is the Anomals 10 dataset that can be found at this URL - "https://www.kaggle.com/alessiocorrado99/animals10"
+The dataset used is the Animals 10 dataset that can be found at this URL - "https://www.kaggle.com/alessiocorrado99/animals10"
 The AI is a CNN made using tensorflow. 
 
 Model Summary-

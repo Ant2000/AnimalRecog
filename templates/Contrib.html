@@ -1,9 +1,88 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Anima Artificial Intelligence Project</title>
-    </head>
-    <body>
-        <p>This is the temporary body</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href='https://fonts.googleapis.com/css?family=Dynalight' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
+</head>
+<style>
+
+  body{
+    background-color: #ff672f;
+    font-family: 'barlow';
+    font-size: 19px;
+    font-weight: 600;
+    
+
+  }
+
+    #j1
+    {
+      font-family:'Dynalight';
+      font-size: 72px;
+      color: black;
+      text-align: center;
+      font-weight: 600;
+      
+
+    }
+    .d1{
+      float: right;
+      background-color: antiquewhite;
+      display: block;
+      height: 200px;
+      width: 430px;
+      border-radius: 8px;
+      padding: 6px;
+      border: solid rgb(29, 28, 28);
+      box-shadow: 5px 8px  #222121;
+      margin-top: 32px;
+    }
+    .d2{
+      float: left;
+      background-color: antiquewhite;
+      display: block;
+      height: 200px;
+      width: 430px;
+      border-radius: 8px;
+      padding: 6px;
+      border: solid rgb(29, 28, 28);  
+      box-shadow: 5px 8px #222121; 
+      margin-top: 32px;   
+    }
+    #j9
+    {
+      padding: 18px;
+    }
+
+
+</style>
+<body>
+  {% extends "base.html" %}
+  {% block content %}
+  <div id="j9">
+  <div><p id="j1">Creators</p></div>
+  <span class="d1">
+    <span>Name:Saurabh Swaraj</span><br><br>
+    <span>Reg-no:19BCE0600</span><br><br>
+    <span>Email Id:saurabh.swaraj2019@vitstudent.ac.in</span>
+
+  </span>
+  <span class="d2">
+  <span>Name:Antony Jose</span><br><br>
+  <span>Reg-no:18BEE0309</span><br><br>
+  <span>Email Id:antonyjose.kueuvilla2018@vitstudent.ac.in</span>
+
+  </span>
+
+</div>
+
+
+
+
+  {% endblock %}
+</body>
 </html>
