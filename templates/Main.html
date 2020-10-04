@@ -3,6 +3,7 @@
     <head>
         <title>Anima Artificial Intelligence Project</title>
     </head>
+    <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Asap Condensed' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
@@ -150,21 +151,62 @@
       .xx
       {
         font-family:Cormorant SC;
-        font-size: 40px;
+        font-size: 54px;
         font-weight: 900;
-        margin-left: 126px;
+        margin-left: 124px;
         letter-spacing: 2px;
         word-spacing: 1.5px;
+        color: aliceblue;
       }
       #r
       {
         font-family:Arvo;
-        margin-left: 126px;
+        margin-left: 124px;
         letter-spacing: 1.5px;
+        
       }
 .result
 {
-  margin-left: 126px;
+  width: 270px;
+    margin-left: 124px;
+    background-color: #ff672f;
+    opacity: 0.6;
+    color: black;
+    font-size: 30px;
+    font-family: 'barlow';
+    padding: 4px;
+    border-radius: 8px;
+    border: solid rgb(29, 28, 28);  
+      box-shadow: 5px 8px #222121;
+
+}
+
+
+
+#submit
+{
+  background-color: orangered;
+    color: aliceblue;
+    border-radius:0px 2px 2px 0px;
+    border: none;
+    width: 80px;
+    height: 27px;
+    letter-spacing: 3px;
+
+
+
+}
+#file
+{
+  background-color: orangered;
+    color: aliceblue;
+    width: 186px;
+    border-radius:0px 2px 2px 0px;
+  
+}
+#dkj
+{
+  float: left;
 }
     </style>
     
@@ -192,8 +234,8 @@
         </div><br><br>
         <div class="xx"><b>File Upload</b></div><br>
         <form id="r" action = "/" method = "POST" enctype = "multipart/form-data">
-        <p><input type = "file" name = "file"></p>
-        <p><input type="submit" value="Submit"></p>
+        <p><input id="file" type = "file" name = "file"></p><br>
+        <p><img id="dkj" src="/static/images/jj12.png" width="27px" height="27px" ><input id="submit" type="submit" value="Submit"></p>
         </form>
         <br>
         <div class="result">

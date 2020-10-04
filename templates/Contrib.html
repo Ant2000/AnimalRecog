@@ -40,6 +40,7 @@
       border: solid rgb(29, 28, 28);
       box-shadow: 5px 8px  #222121;
       margin-top: 32px;
+      opacity: 0.6;
     }
     .d2{
       float: left;
@@ -51,13 +52,53 @@
       padding: 6px;
       border: solid rgb(29, 28, 28);  
       box-shadow: 5px 8px #222121; 
-      margin-top: 32px;   
+      margin-top: 32px;  
+      opacity: 0.6; 
     }
     #j9
     {
       padding: 18px;
     }
+    .d1:hover
+    {
+      float: right;
+      background-color: antiquewhite;
+      display: block;
+      height: 250px;
+      width: 510px;
+      border-radius: 8px;
+      padding: 6px;
+      border: solid rgb(29, 28, 28);
+      box-shadow: 5px 8px  #222121;
+      margin-top: 40px;
+      transition-duration: 2s;
+      transition-timing-function:ease-in-out;
+      font-size: 22px;
+      margin-right: 25px;
+      opacity: 1;
 
+    }
+
+    .d2:hover
+    {
+      float: left;
+      background-color: antiquewhite;
+      display: block;
+      height: 250px;
+      width: 510px;
+      border-radius: 8px;
+      padding: 6px;
+      border: solid rgb(29, 28, 28);
+      box-shadow: 5px 8px  #222121;
+      margin-top: 40px;
+      transition-duration: 2s;
+      transition-timing-function:ease-in-out;
+      font-size: 22px;
+      margin-left: 25px;
+      opacity: 1;
+  
+
+    }
 
 </style>
 <body>
@@ -84,5 +125,12 @@
 
 
   {% endblock %}
+  <script>
+        var data1=document.getElementsByClassName('d1')
+        
+
+
+
+  </script>
 </body>
 </html>

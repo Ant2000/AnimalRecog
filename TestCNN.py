@@ -17,13 +17,13 @@ def upload_file():
         ext = filename.rsplit('.', 1)[1]
         f.save(os.path.join(UPLOAD_FOLDER, filename))
         try:
-            os.rename(UPLOAD_FOLDER + filename, UPLOAD_FOLDER +'1.' + ext)
+            os.rename(UPLOAD_FOLDER + filename, UPLOAD_FOLDER + '1.' + ext)
         except:
             os.remove(UPLOAD_FOLDER + '1.' + ext)
-            os.rename(UPLOAD_FOLDER + filename, UPLOAD_FOLDER +'1.' + ext)
+            os.rename(UPLOAD_FOLDER + filename, UPLOAD_FOLDER + '1.' + ext)
         model = tf.keras.models.load_model("./Test1")
         class_names = ['Butterfly','Cat','Chicken','Cow','Dog','Elephant','Horse','Sheep','Spider','Squirrel']
-        image = tf.keras.preprocessing.image.load_img(UPLOAD_FOLDER + "1." + ext, 
+        image = tf.keras.preprocessing.image.load_img(UPLOAD_FOLDER + '1.' + ext, 
                                                       grayscale=False, 
                                                       color_mode='rgb', 
                                                       target_size=(100, 100),
@@ -49,4 +49,4 @@ def show_model():
         return render_template('Model.html')
 
 if __name__ == '__main__':
-   app.run(debug =True)
+   app.run()
